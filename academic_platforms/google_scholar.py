@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import random
-from ..paper import Paper
+from paper import Paper
 import logging
 
 logger = logging.getLogger(__name__)

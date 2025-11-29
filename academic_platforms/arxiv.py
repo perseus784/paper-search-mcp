@@ -3,7 +3,7 @@ from typing import List
 from datetime import datetime
 import requests
 import feedparser
-from ..paper import Paper
+from paper import Paper
 from PyPDF2 import PdfReader
 import os
 
