@@ -29,12 +29,12 @@ async def search_arxiv(query: str, max_results: int = 10) -> List[Dict]:
 
 
 @mcp.tool()
-async def read_arxiv_paper(paper_id: str, save_path: str = "./downloads") -> str:
+async def read_arxiv_paper(paper_id: str) -> str:
     """
     Extract text from an arXiv PDF.
     """
     try:
-        return arxiv_searcher.read_paper(paper_id, save_path)
+        return arxiv_searcher.read_paper(paper_id)
     except Exception as e:
         print(f"Error reading paper {paper_id}: {e}")
         return ""

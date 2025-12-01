@@ -14,9 +14,6 @@ class PaperSource:
     def search(self, query: str, **kwargs) -> List[Paper]:
         raise NotImplementedError
 
-    def download_pdf(self, paper_id: str, save_path: str) -> str:
-        raise NotImplementedError
-
     def read_paper(self, paper_id: str) -> str:
         raise NotImplementedError
 
