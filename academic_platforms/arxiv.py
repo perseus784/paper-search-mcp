@@ -69,12 +69,6 @@ class ArxivSearcher(PaperSource):
 
         return papers
 
-    # ⛔️ We disable disk downloads — kept for interface compatibility
-    def download_pdf(self, paper_id: str, save_path: str) -> str:
-        raise NotImplementedError(
-            "Disk downloading is disabled. Use read_paper() for in-memory PDF reading."
-        )
-
     def read_paper(self, paper_id: str) -> str:
         """
         Read an arXiv paper entirely in memory without downloading the PDF to disk.
@@ -131,7 +125,7 @@ if __name__ == "__main__":
         try:
             text_content = searcher.read_paper(paper_id)
             print("\nFirst 500 characters of the paper content:")
-            print(text_content[:500] + "...")
+            print(text_content[:5000] + "...")
             print(f"\nTotal length of extracted text: {len(text_content)} characters")
         except Exception as e:
             print(f"Error during paper reading: {e}")

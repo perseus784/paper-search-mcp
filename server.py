@@ -29,14 +29,6 @@ async def search_arxiv(query: str, max_results: int = 10) -> List[Dict]:
 
 
 @mcp.tool()
-async def download_arxiv(paper_id: str, save_path: str = "./downloads") -> str:
-    """
-    Download a PDF from arXiv.
-    """
-    return arxiv_searcher.download_pdf(paper_id, save_path)
-
-
-@mcp.tool()
 async def read_arxiv_paper(paper_id: str, save_path: str = "./downloads") -> str:
     """
     Extract text from an arXiv PDF.
